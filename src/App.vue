@@ -8,7 +8,6 @@
           :done="todo.done"
           :key="i"
           :id="i"
-          @click.native="toggleTodo(todo)"
           >{{ todo.content }}</Todo>
       </transition-group>
 		</ul>
@@ -28,12 +27,9 @@ export default {
 		Todo
 	},
 	mounted() {
-		setTimeout(this.load, 200)
+		setTimeout(this.load, 2000)
 	},
 	methods: {
-		toggleTodo(todo) {
-			todo.done = !todo.done
-		},
 		addTodo(content) {
 			store.todos.push({
 				content,
